@@ -14,10 +14,14 @@ body {
 
 .container {
 	position: relative;
-	width: 400px;
-	background: linear-gradient(#FEA3A3, #BFD1FF);
-	padding: 60px 20px;
+	width: min(400px, 92vw);
+
+	padding:
+	min(60px, 6vw)
+	min(20px, 4vw);
+
 	border-radius: 30px;
+	background: linear-gradient(#FEA3A3, #BFD1FF);
 }
 
 .container .song-info {
