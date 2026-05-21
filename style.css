@@ -326,10 +326,18 @@ body {
 		width: 100%;
 		height: calc(100% + 40px);
 		z-index: 50;
+		overflow-y: auto;
+		overflow-x: hidden;
+		overscroll-behavior: contain;
+		touch-action: pan-y;
 		border-radius: 26px;
 		background:
 		rgba(255,255,255,0.55);
 		backdrop-filter: blur(24px);
 		-webkit-backdrop-filter: blur(24px);
+	}
+	
+	body {
+		overscroll-behavior: none;
 	}
 }
