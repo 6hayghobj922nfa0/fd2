@@ -1,0 +1,271 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background-color: #F4F6FF;
+	box-sizing: border-box;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.container {
+	position: relative;
+	width: 400px;
+	background: linear-gradient(#FEA3A3, #BFD1FF);
+	padding: 60px 20px;
+	border-radius: 30px;
+}
+
+.container .song-info {
+	margin: 0 15px;
+	padding: 220px 15px 45px;
+}
+
+.container .song-info .song-name {
+	display: flex;
+	justify-content: center;
+	font-size: 15px;
+}
+
+.container .song-info .artist-name {
+	display: flex;
+	justify-content: center;
+	font-size: 12px;
+	margin: 10px 0 30px;
+}
+
+.container .song-info .progress-bar {
+	background: linear-gradient(to right, #FFA8A8, #C48EFF);
+	border-radius: 20px;
+	cursor: pointer;
+}
+
+.container .song-info .progress-bar .fill-bar {
+	width: 0;
+	height: 6px;
+	border-radius: 20px;
+	background-color: #fff;
+}
+
+.container .song-info .song-time {
+	display: flex;
+	justify-content: space-between;
+}
+
+.container .song-info .start-time,
+.container .song-info .end-time {
+	font-size: 12px;
+	color: #828282;
+	margin: 10px 0;
+}
+
+.container .disk {
+	max-width: 120px;
+}
+
+.container .disk .active {
+	animation: rotate 3s linear 0s infinite forwards;
+}
+
+.container .disk .cover {
+	width: 200px;
+	height: 200px;
+	position: absolute;
+	top: 37px;
+	left: 113px;
+	background: url("assets/1.jpg");
+	background-repeat: no-repeat;
+	background-position: bottom center;
+	background-size: cover;
+	border: 5px solid #fff;
+	border-radius: 50%;
+	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+	transition: all 0.2s ease-in-out;
+}
+
+.container .controls {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 40px;
+}
+
+.container .controls #play {
+	background-color: hsl(239, 100%, 80%);
+	padding: 15px;
+	border-radius: 50%;
+	transition: all 0.3s ease;
+}
+
+.container .controls #play:hover {
+	background: #7375ff;
+}
+
+.controls img {
+	cursor: pointer;
+}
+
+@keyframes rotate {
+	0% {
+		transform: rotateX(0deg);
+	}
+	100% {
+		transform: rotateZ(360deg);
+	}
+}
+
+.playlist-panel {
+  position: absolute;
+
+  top: 0;
+  left: calc(100% + 18px);
+
+  width: 400px;
+  height: 100%;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  border-radius: 30px;
+
+  background: rgba(255,255,255,0.35);
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  border: 1px solid rgba(255,255,255,0.4);
+
+  box-shadow:
+    0 10px 40px rgba(0,0,0,0.12),
+    inset 0 1px 1px rgba(255,255,255,0.4);
+
+  display: none;
+
+  padding: 0;
+
+  animation: playlistFade 0.18s ease;
+}
+
+.playlist-panel.show {
+	display: block;
+}
+
+@keyframes playlistFade {
+	from {
+		opacity: 0;
+		transform: translateY(8px);
+	}
+
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+.playlist-header {
+	position: sticky;
+	top: 0;
+
+	padding: 22px 24px;
+
+	font-size: 24px;
+	font-weight: 700;
+
+	background: linear-gradient(
+		90deg,
+		rgba(255,170,180,0.75),
+		rgba(180,190,255,0.75)
+	);
+
+	backdrop-filter: blur(10px);
+
+	border-top-left-radius: 30px;
+	border-top-right-radius: 30px;
+
+	z-index: 10;
+}
+
+.playlist-items {
+	padding: 12px;
+}
+
+.playlist-item {
+	display: flex;
+	align-items: center;
+	gap: 14px;
+
+	padding: 12px;
+
+	border-radius: 18px;
+
+	cursor: pointer;
+
+	transition:
+		background 0.2s,
+		transform 0.15s;
+}
+
+.playlist-item:hover {
+	background: rgba(255,255,255,0.45);
+	transform: translateX(3px);
+}
+
+.playlist-item.active {
+	background: rgba(255,255,255,0.55);
+
+	box-shadow:
+		0 4px 14px rgba(0,0,0,0.08);
+}
+
+.playlist-cover {
+	width: 52px;
+	height: 52px;
+
+	border-radius: 14px;
+
+	background-size: cover;
+	background-position: center;
+
+	flex-shrink: 0;
+
+	box-shadow:
+		0 4px 10px rgba(0,0,0,0.12);
+}
+
+.playlist-info {
+	flex: 1;
+	min-width: 0;
+}
+
+.playlist-title {
+	font-size: 15px;
+	font-weight: 600;
+
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.playlist-duration {
+	font-size: 12px;
+	color: rgba(0,0,0,0.55);
+
+	margin-top: 4px;
+}
+
+.playlist-panel::-webkit-scrollbar {
+	width: 10px;
+}
+
+.playlist-panel::-webkit-scrollbar-track {
+	background: transparent;
+}
+
+.playlist-panel::-webkit-scrollbar-thumb {
+	background: rgba(150,150,255,0.35);
+	border-radius: 999px;
+}
