@@ -76,13 +76,16 @@ body {
 	height: 200px;
 	position: absolute;
 	top: 37px;
-	left: 113px;
-	background: url("assets/1.jpg");
+	left: 50%;
+	transform: translateX(-50%);
+
 	background-repeat: no-repeat;
-	background-position: bottom center;
+	background-position: center;
 	background-size: cover;
+
 	border: 5px solid #fff;
 	border-radius: 50%;
+
 	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 	transition: all 0.2s ease-in-out;
 }
