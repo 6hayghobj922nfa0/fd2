@@ -1,7 +1,7 @@
 const songsList = [
 	{
 		name: "30장 BGM 피아노 연주",
-		artist: "하네(adel0824) ",
+		artist: "하네",
 		src: "https://6hayghobj922nfa0.github.io/fd2/music/LastStage_Piano.mp3",
 		cover: "https://6hayghobj922nfa0.github.io/fd2/cover/cover.png"
 	},
@@ -193,6 +193,13 @@ function nextSong() {
 }
 
 function prevSong() {
+	// repeat1
+	if (playMode === 2) {
+		song.currentTime = 0;
+		song.play();
+		return;
+	}
+
 	// shuffle
 	if (playMode === 1) {
 		if (songsList.length > 1) {
