@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="style.css">
+		<title>용의기사2 BGM 플레이어</title>
+	</head>
+	<body>
+		<div class="container">
+			<div class="song-info">
+				<div class="song-name">Song</div>
+				<div class="artist-name">Artist</div>
+				<div class="progress-bar">
+					<div class="fill-bar"></div>
+				</div>
+				<div class="song-time">
+					<div class="start-time">0:00</div>
+					<div class="end-time">0:00</div>
+				</div>
+			</div>
+			<div class="disk">
+				<div class="circle"></div>
+				<div id="cover" class="cover"></div>
+			</div>
+			<div class="controls">
+				<img width="30" height="30" id="playModeBtn" src="icon/shuffle_off.png" alt="play-mode"/>
+				<img width="30" height="30" id="prev" src="icon/rewind.png" alt="rewind"/>
+				<img width="30" height="30" id="play" src="icon/play.png" alt="play"/>
+				<img width="30" height="30" id="next" src="icon//fast-forward.png" alt="fast-forward"/>
+				<img width="30" height="30" id="playlistBtn" src="icon/video-playlist.png" alt="video-playlist"/>
+			</div>
+			<div class="playlist-panel" id="playlistPanel">
+				<div class="playlist-header">Playlist</div>
+				<div class="playlist-items" id="playlistItems"></div>
+			</div>
+		</div>
+		<script src="script.js"></script>
+	</body>
+</html>
